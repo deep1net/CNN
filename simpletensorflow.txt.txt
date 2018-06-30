@@ -1,0 +1,39 @@
+""" In this code we simply demonstrate tensorflow basics 
+      created using jupyter notebook """
+
+#### Set neurons
+
+n_dense = 128
+n_input = 784
+n_dense = 128
+
+#### Define placeholder Tensor
+
+x = tf.placeholder(tf.float32, [None, n_input])
+
+#### Define Variable Tensors
+
+normal
+b = tf.Variable(tf.zeros([n_dense]))
+W = tf.Variable(tf.random_normal([n_input, n_dense]))
+
+#### Design the computational graph
+
+z = tf.add(tf.matmul(x, W),b)
+a = tf.sigmoid(z)
+
+#### Initialize variables
+
+initializer_op = tf.global_variables_initializer()
+
+#### Execute the graph
+
+with tf.Session() as session:
+     session.run(initializer_op)
+     
+     layer_output = session.run(a, feed_dict={x: np.random.random([1, n_input])})
+
+layer_output
+layer_output
+
+_ = plt.hist(np.transpose(layer_output))
